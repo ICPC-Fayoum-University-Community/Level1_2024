@@ -44,3 +44,32 @@ int main() {
 
     return 0;
 }
+
+// another solution
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main() {
+
+    long long a, b;
+    cin >> a >> b;
+
+    if (a > b)
+        swap(a, b);
+
+    long long sum_all = (b * (b + 1) / 2) - ((a - 1) * (a) / 2);
+
+    long long nb = (b + 1) / 2;
+    long long na = (a - (a % 2)) / 2;
+    long long sum_odd = (nb * nb) - (na * na);
+
+    cout << sum_all << '\n'
+         << sum_all - sum_odd << '\n'
+         << sum_odd;
+
+
+    return 0;
+}
